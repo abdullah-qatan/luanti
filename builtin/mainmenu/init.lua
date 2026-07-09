@@ -47,6 +47,19 @@ local tabs = {
 	play_online = dofile(menupath .. DIR_DELIM .. "tab_online.lua")
 }
 
+--------------------------------------------------------------------------------
+-- 🎨 هوك ذكي (Hook) لتطبيق ألوان الأزرار الجديدة على جميع واجهات القائمة تلقائياً
+-- تم اختيار الألوان لتناسب النحاس الكلاسيكي وإطار اللوقو الجديد الخاص بك
+--------------------------------------------------------------------------------
+local original_show_formspec = core.show_formspec
+core.show_formspec = function(name, formspec)
+	if formspec then
+		formspec = "style_type[button;bgcolor=#8c7453;bgcolor_hovered=#a68d6b;textcolor=#e1e7ed]" .. formspec
+	end
+	return original_show_formspec(name, formspec)
+end
+--------------------------------------------------------------------------------
+
 local function main_event_handler(tabview, event)
 	if event == "MenuQuit" then
 		local show_dialog = core.settings:get_bool("enable_esc_dialog")
@@ -151,3 +164,4 @@ end
 
 assert(os.execute == nil)
 init_globals()
+

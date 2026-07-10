@@ -45,9 +45,14 @@ jobs:
           java-version: '17'
     - name: Download Mineclonia Game and Set Default
       run: |
-        rm -rf games/devtest
-        git clone https://codeberg.org/Mineclonia/Mineclonia.git games/mineclonia
-        echo "default_game = mineclonia" >> minetest.conf.example
+        # 1. إنشاء مجلد الألعاب داخل أصول الأندرويد مباشرة
+        mkdir -p android/app/src/main/assets/games
+        
+        # 2. تحميل اللعبة داخل مجلد أصول الأندرويد لكي تُجبر على الاندماج في الـ APK
+        git clone https://codeberg.org/Mineclonia/Mineclonia.git android/app/src/main/assets/games/mineclonia
+        
+        # 3. إنشاء ملف إعدادات داخل الأصول لجعل اللعبة تعمل تلقائياً فور فتح التطبيق
+        echo "default_game = mineclonia" > android/app/src/main/assets/minetest.conf
     - name: Build AAB with Gradle
       run: cd android; ./gradlew bundlerelease
     - name: Build APKs with Gradle

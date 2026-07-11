@@ -44,10 +44,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           
-    - name: Embed Mineclonia as Default Game
+    - name: Absolute Force - Make Mineclonia The Only Internal Game
       run: |
-        rm -rf games/devtest
         git clone https://codeberg.org/Mineclonia/Mineclonia.git games/mineclonia
+        rm -rf games/devtest
+        find android/ -type f -exec sed -i 's/devtest/mineclonia/g' {} +
         sed -i 's/"default_game", "[^"]*"/"default_game", "mineclonia"/g' src/defaultsettings.cpp
         
     - name: Build AAB with Gradle

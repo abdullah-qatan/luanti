@@ -86,8 +86,9 @@ return {
 			"style[label_button;border=false]" ..
 			"button[0.1,3.4;5.3,0.5;label_button;" ..
 			core.formspec_escape(version.project .. " " .. version.string) .. "]" ..
-			-- 🔗 هنا تم وضع رابط موقعك المخصص بدلاً من موقع المحرك القديم
-			"button_url[1.5,4.1;2.5,0.8;homepage;الموقع الرسمي;http://quran-1.rf.gd]"
+			-- 🔗 تم تقسيم المساحة هنا لزرين متناسقين جنباً إلى جنب (الموقع الرسمي + كود المصدر)
+			"button_url[0.2,4.1;2.4,0.8;homepage;الموقع الرسمي;http://quran-1.rf.gd]" ..
+			"button_url[2.8,4.1;2.4,0.8;source_code;كود المصدر;https://github.com/abdullah-qatan/luanti]"
 
 		if PLATFORM == "Android" then
 			fs = fs .. "button[0.5,5.1;4.5,0.8;share_debug;" .. fgettext("Share debug log") .. "]"

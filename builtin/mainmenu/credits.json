@@ -1,17 +1,27 @@
 {
   "core_developers": [
-    "Abdullah Qatan"
+    "Abdullah Qatan (Android Lead)",
+    "Perttu Ahola (celeron55)",
+    "Loic Blot (nerzhul)",
+    "sfan5"
   ],
   "core_team": [
-    "Abdullah Qatan"
+    "Abdullah Qatan (UI & Android Customization)",
+    "shadowninja",
+    "Kahrl",
+    "Craig Morrison (PilzAdam)"
   ],
   "contributors": [
-    "Abdullah Qatan"
+    "Abdullah Qatan (Mod Integration)",
+    "est31",
+    "lothar",
+    "VanessaE",
+    "RealBadAngel"
   ],
   "previous_core_developers": [
-    "Abdullah Qatan"
+    "Old Core Developers (Luanti/Minetest)"
   ],
   "previous_contributors": [
-    "Abdullah Qatan"
+    "Numerous Open-Source Contributors"
   ]
 }
